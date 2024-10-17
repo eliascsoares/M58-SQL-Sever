@@ -18,6 +18,7 @@ const deleteAllBooks = require("../controllers/deleteAllBooks");
 
 bookRouter.post("/addBook",addBook);
 bookRouter.get("/listAllBooks",listAllBooks);
+bookRouter.get("/bookDetails", bookDetails);
 bookRouter.put("/updateAuthor", updateAuthor);
 bookRouter.put("/updateGenre", updateGenre);
 bookRouter.delete("/deleteBook", deleteBook);
