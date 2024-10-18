@@ -9,7 +9,7 @@ async function bookDetails(req,res) {
             return res.status(400).json({ message: "Book title is required. Please provide a 'title' query parameter." });
         }
 
-        console.log("Searching for book with title:", title);  // Para debug
+        console.log("Searching for book with title:", title); 
 
         const book = await Book.findOne({
             where: { title: title },
