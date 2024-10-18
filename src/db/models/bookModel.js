@@ -13,10 +13,6 @@ const Book = connection.define("Book",{
         type: DataTypes.STRING,
         allowNull: false
     },
-    author: {
-        type: DataTypes.STRING,
-        defaultValue: "Not Specified"
-    },
     genre : {
         type: DataTypes.STRING,
         defaultValue: "Not specified"

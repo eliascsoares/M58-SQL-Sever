@@ -15,8 +15,11 @@ const deleteBook = require("../controllers/deleteBook");
 const bookDetails = require("../controllers/bookDetails");
 // import a function to delete all books = deleteAllBooks.js
 const deleteAllBooks = require("../controllers/deleteAllBooks");
+// import a function to add a new author = updateAuthor.js
+const addAuthor = require("../controllers/addAuthor");
 
 bookRouter.post("/addBook",addBook);
+bookRouter.post("/addAuthor", addAuthor);
 bookRouter.get("/listAllBooks",listAllBooks);
 bookRouter.get("/bookDetails", bookDetails);
 bookRouter.put("/updateAuthor", updateAuthor);

@@ -1,7 +1,12 @@
 const Book = require("../models/bookModel");
+const Author = require("../models/authorModel");
 
 async function addBook(req,res) {
     try {
+        const [author] = await Author.findOrCreate({
+            where: { name: req.body.author }
+        });
+
         const output = await Book.create(
             {
                 title: req.body.title,

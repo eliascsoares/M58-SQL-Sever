@@ -1,9 +1,16 @@
 const Book = require("../models/bookModel");
+const Author = require("../models/authorModel");
 
 async function listAllBooks(req,res) {
     try {
-        const output = await Book.findAll();
-        res.status(200).json(output) 
+        const books = await Book.findAll({
+            include: {
+                model: Author,
+                attributes: ['name']
+            }
+        });
+
+        res.status(200).json(books);
     } catch (error) {
         console.log(error);
         const responseMessage = {
